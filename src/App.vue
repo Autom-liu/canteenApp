@@ -1,7 +1,9 @@
 <template>
   <div id="app">
 		<img src="@/assets/images/logo.jpg" alt="" width="100%" />
-    <router-view/>
+		<keep-alive>
+			<router-view/>
+		</keep-alive>
   </div>
 </template>
 
