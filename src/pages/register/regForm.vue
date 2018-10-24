@@ -112,7 +112,8 @@ export default {
 			if (!this.error.status) {
 				const url = this.type === 1 ? '/api/Student/register' : '/api/Teacher/register';
 				axios.post(url, qs.stringify(this.registerForm))
-				.then(res => console.log(res));
+				.then(res => (res.status === 200 ? res.data : this.handleError()))
+				.then(data => this.showError(data.msg));
 			}
 		},
 		checkForm() {
